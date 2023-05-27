@@ -1,0 +1,52 @@
+<!--pages/comments/comments.wxml-->
+<!-- <text>pages/comments/comments.wxml</text> -->
+
+<!-- <wxs module="total">
+  var tot = function(arr1,arr2) {
+    arrall = arr1 +arr2;
+    total1 = arrall.length;
+    top = wx.setNavigationBarTitle({
+      title: total1 + '· 合集',
+    })
+    return top
+  }
+  module.exports.tot = tot
+</wxs>
+
+<navigation-bar> {{total.tot(longcomments,shortcomments)}}</navigation-bar> -->
+
+
+
+<view class="longall">
+  <view class="head">{{longcomments.length}}条长评</view>
+  <view class="long" wx:for="{{longcomments}}">
+    <view class="left">
+      <image class="headportrait" src="{{item.avatar}}" mode="aspectFit" />
+    </view>
+    <view class="right">
+      <view class="name">{{item.author}}</view>
+      <view class="text">{{item.content}}</view>
+    </view>
+  </view>
+</view>
+
+
+<view class="shortall">
+  <view class="head">{{shortcomments.length}}条短评</view>
+  <view class="short" wx:for="{{shortcomments}}">
+    <view class="left">
+      <image class="headportrait" src="{{item.avatar}}" mode="aspectFit" />
+    </view>
+    <view class="right">
+      <view class="name">{{item.author}}</view>
+      <view class="text">{{item.content}}</view>
+      <!-- <view class="time">{{}}</view> -->
+    </view>
+
+  </view>
+  
+</view>
+
+<view class="bottom">已显示全部评价</view>
+
+

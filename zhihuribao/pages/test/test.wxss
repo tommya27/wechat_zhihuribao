@@ -1,0 +1,56 @@
+/* pages/test/test.wxss */
+/* 选择器 {属性：属性值；} */
+
+.box {
+  color: red;
+  /* 文字颜色 */
+  background-color: yellow;
+  width: 250rpx;
+  height: 250rpx;
+}
+
+/* 盒模型  
+一个盒子最终的大小 设定的尺寸+内边距+边框  
+占用空间 再+外边距 */
+.boxA {
+  width: 100px;
+  /* 宽度 */
+  height: 100px;
+  /* 高度 */
+  background-color: lightblue;
+
+  padding: 20px;
+  /* 内边距 */
+
+  border: 10px solid red;
+  /* 边框 */
+  margin: 20px;
+  /* 外边距 */
+}
+
+.parent {
+  display: flex;
+  /* 弹性盒子布局 块元素站一排 */
+}
+
+.a {
+  width: 500rpx;
+  height: 250rpx;
+  background-color: lightblue;
+}
+
+.b {
+  width: 250rpx;
+  height: 250rpx;
+  background-color: lightcoral;
+}
+
+.tt1 {
+  background-color: rgb(255, 236, 224);
+  height: 100rpx;
+}
+
+.tt2 {
+  background-color: lightgreen;
+  height: 150rpx;
+}

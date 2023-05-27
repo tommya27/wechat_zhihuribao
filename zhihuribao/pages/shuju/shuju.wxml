@@ -1,0 +1,76 @@
+<!--pages/shuju/shuju.wxml-->
+<!-- <text>pages/shuju/shuju.wxml</text>
+<view wx:for="{{latest.top_stories}}">{{item.title}}</view> -->
+
+<wxs module="m1">
+  var x = function (str) {
+    h =  str.replace('0x', '#');
+    return h+"00";
+  }
+  // var month = function(str){
+  //   m = str.slice(4,6);
+  //   return m
+  // }
+  var d = function (str) {
+    year = str.slice(0,4);
+    month = str.slice(4,6);
+    day = str.slice(6,8);
+    all = year + "年" + month +"月" + day + "日";
+    return all;
+  }
+  // var checkIsViewed = function (id, history){
+  //   return history.indexOf(id) !== -1
+  // }
+
+
+  module.exports.x = x
+  // module.exports.month = month
+  module.exports.d = d
+</wxs>
+
+<wxs module="m2">
+  var x = function (str) {
+    h =  str.replace('0x', '#');
+    return h;
+  }
+  module.exports.x = x
+</wxs>
+
+<wxs module="y1">
+  var ystr = function (str) {
+    chyear = str.slice(0,3);
+    return chyear;
+  }
+  module.exports.y = ystr
+
+</wxs>
+
+
+
+
+<!-- 轮播图 -->
+<swiper class="swiper" indicator-dots="{{true}}" autoplay="{{true}}" circular="{{true}}">
+  <swiper-item class="item" wx:for="{{days[0].top_stories}}">
+    <image class="thumb" src="{{item.image}}" mode="widthFix" />
+    <view class="title" style="background-image: linear-gradient(to bottom ,{{m1.x(item.image_hue)}} 10% ,{{m2.x(item.image_hue)}} )">{{item.title}}</view>
+  </swiper-item>
+</swiper>
+
+
+
+<!-- 卡片 -->
+<view class="day" wx:for="{{days}}"   >
+  <view id="demo">{{m1.d(item.date)}}</view>
+  <!-- 事件传参 html5 自定义属性 -->
+  <view class="card"  wx:for="{{item.stories}}" bindtap="navToDetail" data-id="{{item.id}}">
+    <view class="left">
+      <view class="title">{{item.title}}</view>
+      <view class="info">{{item.hint}}</view>
+    </view>
+    <image class="thumb" src="{{item.images[0]}}" mode="aspectFit" />
+  </view>
+</view>
+
+
+<button bindtap="tapHandler" wx:if="{{showMore}}" >加载更多</button>
+<!-- 给这个按钮添加一个触摸事件 运行tapHandler -->

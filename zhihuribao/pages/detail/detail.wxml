@@ -1,0 +1,73 @@
+<!--pages/detail/detail.wxml-->
+<!-- <text>pages/detail/detail.wxml</text> -->
+
+<wxs module="m1">
+  var x = function (str) {
+    h = str.replace('0x', '#');
+    return h + "00";
+  }
+  module.exports.x = x
+</wxs>
+
+<wxs module="m2">
+  var x = function (str) {
+    h = str.replace('0x', '#');
+    return h;
+  }
+  module.exports.x = x
+</wxs>
+
+<wxs module="delete">
+  var d1 = function (str) {
+    h = str.replace("查看知乎讨论", "");
+    return h;
+  }
+  // var d2 = function (str) {
+  //   h = str.indexoff("查看知乎讨论");
+  //   return h;
+  // }
+  module.exports.d1 = d1
+    // module.exports.d2 = d2
+</wxs>
+
+
+
+<view class="whole">
+  <view class="body">
+    <view class="header">
+      <image class="thumb" src="{{story.image}}" mode="aspectFill" />
+      <view class="title" style="background-image: linear-gradient(to bottom ,{{m1.x(story.imageHue)}} 10% ,{{m2.x(story.imageHue)}} )">{{story.title}}</view>
+    </view>
+    <view class="textall">
+      <rich-text nodes="{{delete.d1(story.body)}}" />
+      <view class="comment" bindtap="navToComment" data-id="{{story.id}}">查看知乎讨论</view>
+    </view>
+
+  </view>
+
+
+  <!-- <button bindtap="tapHandler" wx:if="{{showMore}}" >加载更多</button> -->
+  <view wx:if="{{story.section}}" class="section-card" style="background-color: {{m2.x(story.imageHue)}};" bindtap="navToSection" data-id="{{story.section.id}}">
+    <image class="thumb" src="{{story.section.thumbnail}}" mode="aspectFill" />
+    <view class="text">
+      <view style="font-size: 38rpx; color: lightgray;">文本来自</view>
+      <view style="font-size: 36rpx;">{{story.section.name}} · 合集</view>
+    </view>
+    <view class="icon">></view>
+  </view>
+  <!-- 合集按钮,跳转合集列表页面 -->
+</view>
+
+
+<!-- <view>
+  <page-meta>
+  <navigation-bar
+    title="{{nbTitle}}"
+    loading="{{nbLoading}}"
+    front-color="{{nbFrontColor}}"
+    background-color="{{nbBackgroundColor}}"
+    color-animation-duration="2000"
+    color-animation-timing-func="easeIn"
+    />
+  </page-meta>
+</view> -->

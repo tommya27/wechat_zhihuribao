@@ -1,0 +1,40 @@
+/* pages/section/section.wxss */
+
+.card {
+  display: flex;
+  margin: 60rpx 0rpx;
+}
+
+/* 后代选择器 */
+.card .left {
+  width: 490rpx;
+  height: 150rpx;
+  /* background-color: lightgreen; */
+  padding: 0rpx 30rpx;
+}
+
+.card .left .title {
+  font-size: 36rpx;
+  font-weight: bold;
+  line-height: 50rpx;
+  height: 100rpx;
+  /* 每一行文字的高度 */
+
+  overflow: hidden;
+  /* 超出隐藏 最多显示两行 100rpx */
+}
+
+.card .left .info {
+  font-size: 28rpx;
+  color: gray;
+  line-height: 50rpx;
+  margin-top: 20rpx;
+}
+
+.card .thumb {
+  width: 170rpx;
+  height: 170rpx;
+  /* background-color: lightgrey; */
+  margin-right: 30rpx;
+  background-image: linear-gradient(to bottom, rgba());
+}

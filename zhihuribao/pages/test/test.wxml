@@ -1,0 +1,44 @@
+<!--pages/test/test.wxml-->
+<view class="box">块元素</view>
+<!-- html 标签语法  -->
+<!-- ctrl + ?/  class相当于分类名 -->
+<!-- <view class="box">box2 块元素</view> -->
+<!-- 默认宽度100% -->
+
+<text class="box">行内元素</text>
+<!-- 行内元素默认宽度是文字实体的宽度 不能设置宽高尺寸 -->
+
+<view class="boxA">boxA</view>
+
+<!-- 块元素站一排 先给他们加一个父元素 css flex -->
+
+
+<!-- 默认情况 父元素弹性盒子 内部的所有直接子元素都不换行 -->
+<!-- <view class="parent">
+  <view class="a">a</view>
+  <view class="b">b</view>
+</view> -->
+
+<view class="parent">
+  <view class="a">
+    <view class="tt1">xxx</view>
+    <view class="tt2">yyy</view>
+  </view>
+  <view class="b">b</view>
+</view>
+
+
+<view>msg {{msg}}</view>
+
+<view>{{person.name}} --- {{person.age}}</view>
+
+<!-- <view>{{friends[0]}}</view>
+<view>{{friends[1]}}</view>
+<view>{{friends[2]}}</view> -->
+
+
+<view wx:for="{{friends}}">{{item}}-{{index}}</view>
+<!-- item 默认的数组的项  index索引序号 -->
+
+<view wx:for="{{banners}}">{{item.title}}</view>
+<!-- 循环显示 -->

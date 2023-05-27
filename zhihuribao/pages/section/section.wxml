@@ -1,0 +1,16 @@
+<!--pages/section/section.wxml-->
+<!-- <text>pages/section/section.wxml</text> -->
+
+
+<view class="section" wx:for="{{section}}"  >
+  <!-- <view id="demo">{{m1.d(item.date)}}</view> -->
+  <!-- 事件传参 html5 自定义属性 -->
+  <view class="card" bindtap="navToDetail" data-id="{{item.id}}">
+    <view class="left">
+      <view class="title">{{item.title}}</view>
+      <view class="info">{{item.display_date}}</view>
+    </view>
+    <image class="thumb" src="{{item.images[0]}}" mode="aspectFit" />
+  </view>
+</view>
+

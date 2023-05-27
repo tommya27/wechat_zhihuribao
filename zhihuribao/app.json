@@ -1,0 +1,21 @@
+{
+  "pages":[
+    "pages/shuju/shuju",
+    "pages/comments/comments",
+    "pages/section/section",
+    "pages/detail/detail",
+    "pages/test/test",
+    "pages/home/home",
+    "pages/logs/logs",
+    "pages/index/index"
+  ],
+  "window":{
+    "backgroundTextStyle":"light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "知乎日报",
+    "navigationBarTextStyle":"black"
+  },
+  "style": "v2",
+  "sitemapLocation": "sitemap.json",
+  "lazyCodeLoading": "requiredComponents"
+}

@@ -1,0 +1,33 @@
+<!--pages/home/home.wxml-->
+
+<image style="width: 250rpx; height: 250rpx;" src="https://res.wx.qq.com/wxdoc/dist/assets/img/0.4cb08bb4.jpg" mode="aspectFill" />
+
+<swiper indicator-dots="{{true}}" autoplay="{{true}}" circular="{{true}}" vertical="{{true}}">
+  <swiper-item>
+    <view>AAAA</view>
+  </swiper-item>
+  <swiper-item>
+    <view>bbbb</view>
+  </swiper-item>
+  <swiper-item>
+    <view>cccc</view>
+  </swiper-item>
+</swiper>
+
+<!-- 文章列表 -->
+
+<view class="card">
+  <view class="left">
+    <view class="title">小事 · 有哪些瞬间你觉得突然被治愈了？</view>
+    <view class="info">文刀半瞎</view>
+  </view>
+  <image class="thumb" src="https://pica.zhimg.com/v2-10e516997a4d23d3fe1bcee11315ecbe.jpg?source=8673f162" mode="aspectFit" />
+</view>
+
+<view class="card">
+  <view class="left">
+    <view class="title">{{story.title}}</view>
+    <view class="info">{{story.hint}}</view>
+  </view>
+  <image class="thumb" src="{{story.images[0]}}" mode="aspectFit" />
+</view>
